@@ -1,0 +1,25 @@
+{
+    "download_playlists": [
+        {
+            "comment": "start_from is used with --playlist-start option. It is updated after download automatically.", 
+            "url": "https://www.youtube.com/playlist?list=AAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 
+            "start_from": 1, 
+            "file_name_pettern": "*Evoland*", 
+            "file_format": ""
+        }, 
+        {
+            "comment": "Please edit file_name_pettern to count how many files are downloaded. Multibyte strings can be used.", 
+            "url": "https://www.youtube.com/playlist?list=BBBBBBBBBBBBBBBBBBBBBBBBBB", 
+            "start_from": 1, 
+            "file_name_pettern": "*犬×川*", 
+            "file_format": ""
+        }, 
+        {
+            "comment": "A sample of downloading as m4a(audio). file_format is used with -f option.", 
+            "url": "https://www.youtube.com/playlist?list=CCCCCCCCCCCCCCCCCCCCCCCCC", 
+            "start_from": 1, 
+            "file_name_pettern": "**", 
+            "file_format": "140"
+        }
+    ]
+}
