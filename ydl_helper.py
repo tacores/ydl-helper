@@ -6,6 +6,7 @@ import re
 import glob
 import json
 import subprocess
+import sys
 
 class YdlPlaylistHelper(object):
 
@@ -34,12 +35,15 @@ class YdlPlaylistHelper(object):
         self.__name_pettern = setting["file_name_pettern"]
 
     def __download_one_playlist(self, setting):
-        args = ['youtube-dl']
+        if sys.platform == 'win32':
+            args = ['youtube-dl.exe']
+        else:
+            args = ['youtube-dl']
         args.extend(['--playlist-start', str(self.__start_from)])
         if self.__file_format != '':
             args.extend(['-f', self.__file_format])
         args.append(self.__url)
-        subprocess.call(args)
+        subprocess.call(args, shell=True)
 
     def __count_current_files(self):
         count = 0
