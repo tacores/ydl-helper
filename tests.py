@@ -219,6 +219,20 @@ class YdlHelperTest(unittest.TestCase):
 		} ] }
 		self.assertEqual(expect, self.setting_stub.get_save_arg())
 
+	def test_ignore_comment(self):
+		global setting
+		setting = {"download_playlists" : [ {
+		"comment" : "free description",
+		"url" : "https://ydl-url",
+		"--playlist-start" : 10,
+		"file_name_pettern" : "*pettern*"
+		} ] }
+
+		self.sut.download_all_playlists()
+
+		expect = ['youtube-dl', '--playlist-start', '10', 'https://ydl-url']
+		self.assertEqual(expect, self.subp_spy.get_args())
+
 if __name__ == '__main__':
 	unittest.main()
 
